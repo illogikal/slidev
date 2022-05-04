@@ -2,7 +2,7 @@ import type { Ref } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
 import { computed, nextTick, ref } from 'vue'
 import { SwipeDirection, isString, timestamp, usePointerSwipe } from '@vueuse/core'
-import { rawRoutes, router } from '../routes'
+import { rawRoutes as oldRawRoutes, router } from '../routes'
 import { configs } from '../env'
 import { useRouteQuery } from './route'
 import { isDrawing } from './drawings'
@@ -17,6 +17,8 @@ export interface TocItem {
   hideInToc?: boolean
   title?: string
 }
+
+const rawRoutes = oltRawRoutes.slice(0,-1)
 
 export { rawRoutes, router }
 
